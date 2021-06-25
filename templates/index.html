@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style693.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+ 
+</head>
+<body>
+   
+    
+    <div class="container">
+      <form action="{{ url_for('predict')}}" method="POST" >
+        <p>Pima Indian Diabetes Prediction</p>
+        
+        <input type="number" placeholder="number of pregnancies(for woman)" name="num_preg" required><br>
+        <input type="number" placeholder="glucose concentration" name="glucose_conc" required><br>
+        <input type="number" placeholder="Diastolic blood pressure(mm Hg)" name="diastolic_bp" required><br>
+        <input type="number" placeholder="insulin(mu U/ml)" name="insulin" required><br>
+        <input type="number" placeholder="Body mass index(weight in kg/(height in m)^2)" step="0.01" name="bmi" required><br>
+        <input type="number" placeholder="Diabetes pedigree function" step="0.001" name="diab_pred" required><br>
+        <input type="number" placeholder="Age (years)" name="age" required><br>
+        <input type="number" placeholder="Skin lesions" step="0.0001" name="skin" required><br>
+        <input type="submit" class="btn1"  value="Predict Diabetes"><br>
+        
+      </form>
+    
+      <div class="drops">
+        <div class="drop drop-1"></div>
+        <div class="drop drop-2"></div>
+        <div class="drop drop-3"></div>
+        <div class="drop drop-4"></div>
+        <div class="drop drop-5"></div>
+      </div>
+    </div>   
+    
+    <br>
+    <br>
+   
+    <div class="middle">
+        <a class="btn" href="https://www.facebook.com" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="btn" href="https://twitter.com/" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="btn" href="https://www.google.com" target="_blank">
+          <i class="fab fa-google"></i>
+        </a>
+        <a class="btn" href="https://www.instagram.com/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn" href="https://www.youtube.com/" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div> 
+      <br>
+      
+      <h3 class="copy1">{{prediction_text}}</h3>
+     
+
+</body>
+</html>
